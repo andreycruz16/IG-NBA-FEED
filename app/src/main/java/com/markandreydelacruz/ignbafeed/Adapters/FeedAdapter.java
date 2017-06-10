@@ -1,10 +1,9 @@
-package com.markandreydelacruz.ignbafeed;
+package com.markandreydelacruz.ignbafeed.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +13,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
+import com.markandreydelacruz.ignbafeed.FeedDetails;
+import com.markandreydelacruz.ignbafeed.Models.FeedModel;
+import com.markandreydelacruz.ignbafeed.R;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
@@ -26,11 +28,9 @@ import java.util.List;
 public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
 
     private List<FeedModel> feedModelList;
-    private Context context;
 
     public FeedAdapter(List<FeedModel> feedModelList, Context context) {
         this.feedModelList = feedModelList;
-        this.context = context;
     }
 
     @Override

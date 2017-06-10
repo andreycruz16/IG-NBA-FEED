@@ -1,4 +1,4 @@
-package com.markandreydelacruz.ignbafeed;
+package com.markandreydelacruz.ignbafeed.Models;
 
 import java.util.List;
 

@@ -11,6 +11,8 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.markandreydelacruz.ignbafeed.Adapters.FeedAdapter;
+import com.markandreydelacruz.ignbafeed.Models.FeedModel;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -37,8 +39,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Display Icon on toolbar
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+        if(getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+        }
         setTitle("NBA Feed");
         // Create default options which will be used for every
         //  displayImage(...) call if no options will be passed to this method
@@ -116,14 +120,12 @@ public class MainActivity extends AppCompatActivity {
                 adapter = new FeedAdapter(feedModelList, null);
                 recyclerView.setAdapter(adapter);
 
-
 //                MovieModel movieModel = new Gson().fromJson(new String(responseBody), MovieModel.class);
 //                List<MovieModel> test = Collections.singletonList(new Gson().fromJson(new String(responseBody), MovieModel.class));
 //                movieModelList.add(movieModel);
 //                Toast.makeText(getApplicationContext(), "hello", Toast.LENGTH_LONG).show();
 //                adapter = new MovieAdapter(test, getApplicationContext());
 //                recyclerView.setAdapter(adapter);
-
             }
 
             @Override
