@@ -99,7 +99,7 @@ public class FeedDetails extends AppCompatActivity {
 
         StringBuilder stringBuilder = new StringBuilder();
         for(FeedModel.CommentsBean.DataBeanX comments: feedModel.getComments().getData()){
-            stringBuilder.append("-"+comments.getText()+"\n\n");
+            stringBuilder.append("-").append(comments.getText()).append("\n\n");
         }
         textViewCommentSection.setText(stringBuilder);
 

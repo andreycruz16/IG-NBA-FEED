@@ -68,7 +68,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
                 holder.imageViewInstagramFeed.setVisibility(View.INVISIBLE);
             }
         });
-        holder.textViewLikes.setText(feedModel.getLikes().getCount()+" likes");
+        holder.textViewLikes.setText(String.format("%d likes", feedModel.getLikes().getCount()));
         holder.textViewUsername.setText("@"+feedModel.getUser().getUsername());
         holder.textViewCaption.setText(feedModel.getCaption().getText());
 
@@ -97,7 +97,6 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
         TextView textViewCaption;
         TextView textViewLikes;
         LinearLayout linearLayout;
-
 
         public ViewHolder(View itemView) {
             super(itemView);
